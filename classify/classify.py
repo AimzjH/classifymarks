@@ -2,7 +2,7 @@
 
 
 import sys
-
+import math
 
 def getData(f):
     results = []
@@ -24,15 +24,15 @@ def showRanges(data):
     lower = boundaries[0]
     for upper in boundaries[1:]:
         candidates = thoseInRange(data,lower,upper)
-        print(candidates)
         candidates.sort()
         print("Between %s and %s"%(lower,upper))
         for student in candidates:
             print("  "+student)
-        lower=upper
+        lower=upper+1
 
 
 fname = open(sys.argv[1])
+print("name: " +str(fname))
 boundaries = list(map(int, sys.argv[2:]))
 
 data = getData(fname)
