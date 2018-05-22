@@ -24,6 +24,7 @@ def showRanges(data):
     lower = boundaries[0]
     for upper in boundaries[1:]:
         candidates = thoseInRange(data,lower,upper)
+        print(candidates)
         candidates.sort()
         print("Between %s and %s"%(lower,upper))
         for student in candidates:
