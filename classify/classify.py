@@ -29,10 +29,18 @@ def showRanges(data):
         for student in candidates:
             print("  "+student)
         lower=upper+1
+    
 
+def testRanges(data):
+	lower = boundaries[0]
+	testCandidates = []
+	for upper in boundaries[1:]:
+		testCandidates.Append(thoseInRange(data,lower,upper))
+		testCandidates.sort()
+		lower=upper+1
+	return testCandidates
 
 fname = open(sys.argv[1])
-print("name: " +str(fname))
 boundaries = list(map(int, sys.argv[2:]))
 
 data = getData(fname)
